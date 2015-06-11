@@ -25,6 +25,33 @@ Module.filter('time',function () {
   };
 });
 
+Module.filter('zh', function() {
+  return function (val) {
+    var dic = {
+      Mon: '周一',
+      Tue: '周二',
+      Wed: '周三',
+      Thu: '周四',
+      Fri: '周五',
+      Sat: '周六',
+      Sun: '周日',
+      Jan: '一月',
+      Feb: '二月',
+      Mar: '三月',
+      Apr: '四月',
+      May: '五月',
+      Jun: '六月',
+      Jul: '七月',
+      Aug: '八月',
+      Sep: '九月',
+      Oct: '十月',
+      Nov: '十一月',
+      Dec: '十二月'
+    };
+    return dic[val] || val;
+  };
+});
+
 Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function datePickerDirective(datePickerConfig, datePickerUtils) {
 
   //noinspection JSUnusedLocalSymbols
