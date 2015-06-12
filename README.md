@@ -1,9 +1,10 @@
-# AngularJS datepicker directives
+# AngularJS datepicker(zh_CN localization) directives
 
-## WIP
+## Note
+This project is a Chinese version which forked from [angular-datepicker](https://github.com/g00fy-/angular-datepicker), and I customized the styles, If you want to use original styles, just check branch to `zh_localization`.
 
 <a href="https://travis-ci.org/eralha/angular-datepicker" target="_blank">
-<img src="https://travis-ci.org/eralha/angular-datepicker.svg" /></a> 
+<img src="https://travis-ci.org/eralha/angular-datepicker.svg" /></a>
 <a href="http://gruntjs.com/" target="_blank"><img src="https://cdn.gruntjs.com/builtwith.png" alt="" /></a>
 
 #### Requirements
@@ -11,7 +12,7 @@
 -  Angular v1.2+
 
 
-#### Development version 
+#### Development version
 
 Checkout, run `npm install` and `bower install`.
 To build run `grunt build`
@@ -42,7 +43,7 @@ To build run `grunt build`
 <div date-picker="start" max-view="month"></div>
 ```
 
-(min) view 
+(min) view
 
 ##### only date view
 
