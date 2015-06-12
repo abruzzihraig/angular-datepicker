@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" href="./app/styles/demo.css"/>
+  </head>
+  <body ng-app="sample">
+    <h1>Angular Calendar CN</h1>
+    <div class="default container">
+      <h2>default views</h2>
+      <div class="flexbox">
+        <div class="box">
+          <h3>Year</h3>
+          <div date-picker="start" view="year"></div>
+        </div>
+        <div class="box">
+          <h3>Month</h3>
+          <div date-picker="start" view="month"></div>
+        </div>
+      </div>
+      <div class="flexbox">
+        <div class="box">
+          <h3>Date</h3>
+          <div date-picker="start" view="date"></div>
+        </div>
+        <div class="box">
+          <h3>Hours</h3>
+          <div date-picker="start" view="hours"></div>
+        </div>
+        <div class="box">
+          <h3>Minutes</h3>
+          <div date-picker="start" view="minutes"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="min container">
+      <h2>Min Views</h2>
+      <div class="flexbox">
+        <div class="box">
+          <h3>year</h3>
+          <div date-picker="start" min-view="year"></div>
+        </div>
+        <div class="box">
+          <h3>month</h3>
+          <div date-picker="start" min-view="month"></div>
+        </div>
+      </div>
+      <div class="flexbox">
+        <div class="box">
+          <h3>date</h3>
+          <div date-picker="start" min-view="date"></div>
+        </div>
+        <div class="box">
+          <h3>hours</h3>
+          <div date-picker="start" min-view="hours"></div>
+        </div>
+        <div class="box">
+          <h3>minutes</h3>
+          <div date-picker="start" min-view="minutes"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max container">
+      <h2>Max Views</h2>
+      <div class="flexbox">
+        <div class="box">
+          <h3>year</h3>
+          <div date-picker="start" max-view="year"></div>
+        </div>
+        <div class="box">
+          <h3>month</h3>
+          <div date-picker="start" max-view="month"></div>
+        </div>
+      </div>
+      <div class="flexbox">
+        <div class="box">
+          <h3>date</h3>
+          <div date-picker="start" max-view="date"></div>
+        </div>
+        <div class="box">
+          <h3>hours</h3>
+          <div date-picker="start" max-view="hours"></div>
+        </div>
+        <div class="box">
+          <h3>maxutes</h3>
+          <div date-picker="start" max-view="minutes"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="maxmin container">
+      <h2>max & min views</h2>
+      <div class="flexbox">
+        <div class="box">
+          <h3>time</h3>
+          <div date-picker="start" max-view="hours" min-view="minutes"></div>
+        </div>
+        <div class="box">
+          <h3>date</h3>
+          <div date-picker="start" max-view="year" min-view="date"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input container">
+      <h2>Input Default</h2>
+      <div class="flexbox">
+        <div class="box">
+          <h3>Input With Append</h3>
+          <input type="text" date-time ng-model="start" required="true" view="hours" partial="true">
+          <div class="input-append input-prepend" date-time-append>
+            <span class="add-on"><i class="icon-calendar"></i></span>
+            <input type="text" date-time ng-model="start" required="true" view="hours">
+            <span class="add-on"><i class="icon-calendar"></i></span>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Input With Prepend</h3>
+          <div class="input-prepend" date-time-append>
+          <span class="add-on"><i class="icon-calendar"></i></span>
+          <input type="text" date-time ng-model="start" required="true" view="hours">
+        </div>
+        </div>
+      </div>
+      <div class="flexbox">
+        <div class="box">
+          <h3>Input With Auto Close</h3>
+          <div class="" date-time-append>
+            <span class="add-on"><i class="icon-calendar"></i></span>
+            <input type="text" date-time auto-close="true" ng-model="start" required="true" view="hours">
+            <span class="add-on"><i class="icon-calendar"></i></span>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Button</h3>
+          <div class="dropdown-datepicker">
+            <a class="dropdown-toggle">
+              📅  {{(date|date:'yyyy/MM/dd') || '选择日期'}}
+            </a>
+            <div class="dropdown-menu" ng-click="$event.preventDefault();$event.stopPropagation()">
+              <div date-picker="date" min-view="date" auto-close="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="range container">
+      <h2>Date Range</h2>
+      <h3>Default Range View</h3>
+      <div class="flexbox">
+        <div class="box">
+          <div date-range start="a" end="b" style="position: relative; z-index:0"></div>
+          <h3>Date Range Button</h3>
+          <div class="dropdown">
+            <a class="dropdown-toggle">
+              {{(a|date)||"pick start"}} - {{(b|date)||"pick end"}}
+            </a>
+            <div class="dropdown-menu" ng-click="$event.preventDefault();$event.stopPropagation()">
+              <div date-range start="a" end="b"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Forked by <a href=https://github.com/g00fy-/angular-datepicker _blank="target">angular-datepicker</a></footer>
+
+    <script src="./app/components/angular/angular.min.js"></script>
+    <script src="./dist/index.js"></script>
+    <script>
+      angular.module('sample', ['datePicker']);
+    </script>
+  </body>
+</html>
