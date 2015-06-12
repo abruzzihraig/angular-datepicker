@@ -1,0 +1,50 @@
+body {
+  background-color: #663399;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Patrick Hand SC', cursive;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+  margin: 0 0 20px;
+}
+h3 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto 50px;
+  padding: 30px 10px;
+  background: #602A92;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.container .flexbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer {
+  background: #602A92;
+  line-height: 50px;
+  min-height: 50px;
+  width: 100%;
+  text-align: center;
+  color: #262C33;
+}
+
+footer a {
+  color: #262C33;
+}
