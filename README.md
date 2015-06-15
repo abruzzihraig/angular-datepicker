@@ -19,7 +19,7 @@ To build run `grunt build`
 
 ## Examples
 
-[Live demo](https://rawgithub.com/g00fy-/angular-datepicker/master/app/index.html)
+[Demo](http://abruzzihraig.github.io/angular-datepicker-cn/)
 
 
 ##### defaults
