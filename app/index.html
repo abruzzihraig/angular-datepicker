@@ -144,12 +144,12 @@
         </div>
         <div class="box">
           <h3>Button</h3>
-          <div class="dropdown">
-            <a class="dropdown-toggle btn btn-danger">
-              pick a date: {{(date|date)}}
+          <div class="dropdown-datepicker">
+            <a class="dropdown-toggle">
+              📅  {{(date|date:'yyyy/MM/dd') || '选择日期'}}
             </a>
             <div class="dropdown-menu" ng-click="$event.preventDefault();$event.stopPropagation()">
-              <div date-picker="date"></div>
+              <div date-picker="date" min-view="date" auto-close="true"></div>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@
           <div date-range start="a" end="b" style="position: relative; z-index:0"></div>
           <h3>Date Range Button</h3>
           <div class="dropdown">
-            <a class="dropdown-toggle btn btn-danger">
+            <a class="dropdown-toggle">
               {{(a|date)||"pick start"}} - {{(b|date)||"pick end"}}
             </a>
             <div class="dropdown-menu" ng-click="$event.preventDefault();$event.stopPropagation()">
@@ -178,15 +178,16 @@
     <footer>Forked by <a href=https://github.com/g00fy-/angular-datepicker _blank="target">angular-datepicker</a></footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script> -->
     <!-- build:js module.min.js -->
     <script src="scripts/datePicker.js"></script>
     <script src="scripts/datePickerUtils.js"></script>
     <script src="scripts/dateRange.js"></script>
     <script src="scripts/input.js"></script>
+    <script src="scripts/dropdown.js"></script>
     <!-- endbuild -->
     <script>
-      angular.module('sample', ['datePicker', 'ui.bootstrap']);
+      angular.module('sample', ['datePicker']);
     </script>
   </body>
 </html>

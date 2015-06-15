@@ -124,6 +124,7 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
         if(attrs.disabled) {
           return;
         }
+
         scope.date = date;
         // change next view
         var nextView = scope.views[scope.views.indexOf(scope.view) + 1];
@@ -161,8 +162,8 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
         }
 
         if(!nextView && attrs.autoClose === 'true'){
-          element.addClass('hidden');
           scope.$emit('hidePicker');
+          scope.$emit('hideDropdownPicker');
         }
       };
 
