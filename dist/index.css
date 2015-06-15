@@ -73,16 +73,12 @@
 [date-range] [date-picker] .after.before.active {
   background-color: #24528c \9;
 }
-[date-picker].hidden {
-  display: none;
-}
 [date-picker] {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  background-color: #fff;
   /* GENERAL */
   /* SPECIFIC */
 }
@@ -123,7 +119,6 @@
   color: #999999;
   cursor: default;
 }
-[date-picker] .active,
 [date-picker] .now {
   color: #fff;
   background-color: #181c20;
@@ -155,4 +150,32 @@
 [date-picker] [ng-switch-when="date"] td span:hover {
   color: white;
   cursor: pointer;
+}
+.dropdown-datepicker {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-datepicker.open .dropdown-menu {
+  display: block;
+}
+.dropdown-datepicker a {
+  text-align: left;
+}
+.dropdown-datepicker .dropdown-toggle {
+  display: inline-block;
+  height: 30px;
+  min-width: 100px;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 12px;
+  background: #181C20;
+  border-radius: 4px;
+  color: #565a64;
+}
+.dropdown-datepicker .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  min-width: 280px;
 }
