@@ -164,8 +164,7 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
         }
 
         if(!nextView && attrs.autoClose === 'true'){
-          scope.$emit('hidePicker');
-          scope.$emit('hideDropdownPicker');
+          scope.$emit('hidePicker', scope.date);
         }
       };
 
@@ -478,7 +477,7 @@ Module.directive('dropdownDatepicker', ['$document', function($document) {
         e.stopPropagation();
         element.addClass('open');
       });
-      scope.$on('hideDropdownPicker', function() {
+      scope.$on('hidePicker', function() {
         element.removeClass('open');
       });
       $document.bind('click', function() {

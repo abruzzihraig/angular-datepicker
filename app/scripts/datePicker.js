@@ -162,8 +162,7 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
         }
 
         if(!nextView && attrs.autoClose === 'true'){
-          scope.$emit('hidePicker');
-          scope.$emit('hideDropdownPicker');
+          scope.$emit('hidePicker', scope.date);
         }
       };
 

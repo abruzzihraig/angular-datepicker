@@ -11,7 +11,7 @@ Module.directive('dropdownDatepicker', ['$document', function($document) {
         e.stopPropagation();
         element.addClass('open');
       });
-      scope.$on('hideDropdownPicker', function() {
+      scope.$on('hidePicker', function() {
         element.removeClass('open');
       });
       $document.bind('click', function() {
