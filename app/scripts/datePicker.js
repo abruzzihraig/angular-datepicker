@@ -62,7 +62,8 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
     scope: {
       model: '=datePicker',
       after: '=?',
-      before: '=?'
+      before: '=?',
+      name: '@'
     },
     link: function (scope, element, attrs, ngModel) {
 
@@ -162,7 +163,7 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
         }
 
         if(!nextView && attrs.autoClose === 'true'){
-          scope.$emit('hidePicker', scope.date);
+          scope.$emit('hidePicker', scope.date, attrs.name || attrs.id);
         }
       };
 

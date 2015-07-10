@@ -64,7 +64,8 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
     scope: {
       model: '=datePicker',
       after: '=?',
-      before: '=?'
+      before: '=?',
+      name: '@'
     },
     link: function (scope, element, attrs, ngModel) {
 
@@ -164,7 +165,7 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
         }
 
         if(!nextView && attrs.autoClose === 'true'){
-          scope.$emit('hidePicker', scope.date);
+          scope.$emit('hidePicker', scope.date, attrs.name || attrs.id);
         }
       };
 
@@ -472,17 +473,18 @@ Module.directive('dropdownDatepicker', ['$document', function($document) {
   return {
     restrict: 'ACE',
     link: function(scope, element) {
+      function hidePicker() {
+        element.removeClass('open');
+        $document.unbind('click', hidePicker);
+      }
+
       element.bind('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         element.addClass('open');
+        $document.bind('click', hidePicker);
       });
-      scope.$on('hidePicker', function() {
-        element.removeClass('open');
-      });
-      $document.bind('click', function() {
-        element.removeClass('open');
-      });
+      scope.$on('hidePicker', hidePicker);
     }
   };
 }]);
